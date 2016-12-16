@@ -3,10 +3,11 @@
 #include <iostream>
 #include <string>
 
-enum class TypeCase{
+enum class TypeCase
+{
     Contenu, Vide, Mur, But, Personnage
-    };
-    // Contenu = 0, Vide =1, Mur=2, But=3, Personnage=4
+};
+// Contenu = 0, Vide =1, Mur=2, But=3, Personnage=4
 
 std::ostream& operator<<(std::ostream&, const TypeCase);
 
