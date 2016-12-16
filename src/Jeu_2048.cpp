@@ -6,10 +6,13 @@ Jeu_2048:: ~Jeu_2048() {}
 
 int Jeu_2048::getScore() const
 {
-    return 0;
+    return score;
 }
 
-void Jeu_2048::setScore() {}
+void Jeu_2048::setScore(int i)
+{
+    score = i;
+}
 
 bool Jeu_2048::fini()
 {

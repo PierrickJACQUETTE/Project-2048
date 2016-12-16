@@ -6,7 +6,7 @@
 class Plateau
 {
 private :
-    int size;
+    int taille;
     int nbX;
     int nbY;
     std::vector <Case> plateau;
@@ -14,11 +14,11 @@ private :
 public :
     Plateau(int x, int y);
     virtual ~Plateau();
-    int getSize() const; // retourne x*y
+    int getTaille() const;
     int getNbX() const;
     int getNbY() const;
     std::vector<Case> getPlateau() const;
-    void setCase(Case c);
+    void setCase(Case, int, int);
     bool isFull() const;
     friend std::ostream &operator <<(std::ostream &, const Plateau) ;
 
@@ -27,5 +27,3 @@ protected :
 };
 
 #endif // PLATEAU_HPP
-
-

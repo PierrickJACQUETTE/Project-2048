@@ -2,45 +2,64 @@
 
 using namespace std;
 
-Case::Case(TypeCase typeCase, int x, int y) : typeCase(typeCase), x(x), y(y), nombre(0){}
+Case::Case(TypeCase typeCase, int x, int y) : typeCase(typeCase), x(x), y(y), nombre(0) {}
 
-Case::~Case(){}
+Case::~Case() {}
 
 int Case::getNombre() const
 {
-    return 0;
+    return nombre;
 }
 
 int Case::getX() const
 {
-    return 0;
+    return x;
 }
 
 int Case::getY() const
 {
-    return 0;
+    return y;
 }
 
-TypeCase Case::getTypeCase() const{
+TypeCase Case::getTypeCase() const
+{
     return typeCase;
 }
 
-void Case::setX(int) {}
+void Case::setX(int i)
+{
+    x = i;
+}
 
-void Case::setY(int) {}
+void Case::setY(int i )
+{
+    y = i;
+}
 
-void Case::setTypeCase(TypeCase typeCase) {}
+void Case::setTypeCase(TypeCase tC)
+{
+    typeCase = tC;
+}
 
-void Case::setCase(TypeCase typeCase, int, int) {}
+void Case::setCase(TypeCase tC, int ix, int iy)
+{
+    typeCase = tC;
+    x = ix;
+    y = iy;
+}
 
-void Case::setNombre(int) {}
+void Case::setNombre(int i)
+{
+    nombre = i;
+}
 
 ostream& operator<<(ostream& out, const Case c)
 {
     return (c.nombre!=0)? out<<c.nombre: out<<c.typeCase;
 }
 
-ostream& operator<<(ostream& out, const TypeCase typeCase){
+ostream& operator<<(ostream& out, const TypeCase typeCase)
+{
     switch (typeCase)
     {
     case TypeCase::Contenu:
@@ -59,7 +78,7 @@ ostream& operator<<(ostream& out, const TypeCase typeCase){
         out << "P";
         break;
     }
-        return out;
+    return out;
 
 }
 

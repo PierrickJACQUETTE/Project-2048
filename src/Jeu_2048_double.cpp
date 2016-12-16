@@ -6,7 +6,7 @@ Jeu_2048_double::~Jeu_2048_double() {}
 
 bool Jeu_2048_double::getCaseDouble() const
 {
-    return true;
+    return case_double;
 }
 
 void Jeu_2048_double::unTour() {}

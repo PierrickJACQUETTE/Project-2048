@@ -10,7 +10,7 @@ private :
 public :
     Jeu_2048(int x, int y);
     int getScore() const;
-    void setScore();
+    void setScore(int);
     virtual ~Jeu_2048();
     virtual bool fini();
     virtual void affiche();
