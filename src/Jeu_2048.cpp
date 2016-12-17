@@ -19,11 +19,12 @@ bool Jeu_2048::fini()
     return true;
 }
 
-void Jeu_2048::affiche() {}
+void Jeu_2048::unTour(int) {}
 
-void Jeu_2048::unTour() {}
-
-void Jeu_2048::aGagne() {}
+bool Jeu_2048::aGagne()
+{
+    return false;
+}
 
 void Jeu_2048::lancerPartie() {}
 

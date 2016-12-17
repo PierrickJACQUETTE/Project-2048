@@ -20,8 +20,8 @@ private:
     static int choixTaille(std::string);
     static int choixJeu();
     static int choix2048();
-    static void fonction2048(int, int, int);
-    static bool lancerException(bool, std::string);
+    static int choixJoueur();
+    static Jeu* fonction2048(int, int, int);
 };
 
 #endif // UTILISATEUR_HPP

@@ -9,4 +9,4 @@ bool Jeu_2048_neg::getCaseNeg() const
     return case_neg;
 }
 
-void Jeu_2048_neg::unTour() {}
+void Jeu_2048_neg::unTour(int) {}

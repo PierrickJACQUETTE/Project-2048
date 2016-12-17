@@ -9,4 +9,4 @@ bool Jeu_2048_destroy::getCaseDestroy() const
     return case_destroy;
 }
 
-void Jeu_2048_destroy::unTour() {}
+void Jeu_2048_destroy::unTour(int) {}

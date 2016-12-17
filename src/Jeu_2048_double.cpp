@@ -9,4 +9,4 @@ bool Jeu_2048_double::getCaseDouble() const
     return case_double;
 }
 
-void Jeu_2048_double::unTour() {}
+void Jeu_2048_double::unTour(int) {}

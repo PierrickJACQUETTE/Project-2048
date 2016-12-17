@@ -11,12 +11,11 @@ private :
 public :
     Jeu_Sokoban(int x, int y);
     virtual ~Jeu_Sokoban();
-    virtual bool fini();
-    virtual void affiche();
-    virtual void unTour();
-    virtual void aGagne();
-    virtual void lancerPartie();
-    virtual void simulerPartie();
+    bool fini();
+    void unTour(int);
+    bool aGagne();
+    void lancerPartie();
+    void simulerPartie();
 
 protected :
 

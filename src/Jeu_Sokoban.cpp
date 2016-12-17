@@ -10,11 +10,12 @@ bool Jeu_Sokoban::fini()
     return true;
 }
 
-void Jeu_Sokoban::affiche() {}
+void Jeu_Sokoban::unTour(int) {}
 
-void Jeu_Sokoban::unTour() {}
-
-void Jeu_Sokoban::aGagne() {}
+bool Jeu_Sokoban::aGagne()
+{
+    return false;
+}
 
 void Jeu_Sokoban::lancerPartie() {}
 

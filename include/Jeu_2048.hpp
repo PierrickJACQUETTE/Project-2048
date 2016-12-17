@@ -13,9 +13,8 @@ public :
     void setScore(int);
     virtual ~Jeu_2048();
     virtual bool fini();
-    virtual void affiche();
-    virtual void unTour();
-    virtual void aGagne();
+    virtual void unTour(int);
+    virtual bool aGagne();
     virtual void lancerPartie();
     virtual void simulerPartie();
 

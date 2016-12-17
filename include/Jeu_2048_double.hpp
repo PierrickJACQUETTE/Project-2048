@@ -8,9 +8,9 @@ class Jeu_2048_double : public Jeu_2048
 {
 public:
     Jeu_2048_double(int x, int y);
-    virtual ~Jeu_2048_double();
+    ~Jeu_2048_double();
     bool getCaseDouble() const;
-    virtual void unTour();
+    void unTour(int);
 protected:
 private:
     bool case_double;

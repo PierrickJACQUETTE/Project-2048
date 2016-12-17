@@ -8,9 +8,9 @@ class Jeu_2048_destroy : public Jeu_2048
 {
 public:
     Jeu_2048_destroy(int x, int y);
-    virtual ~Jeu_2048_destroy();
+    ~Jeu_2048_destroy();
     bool getCaseDestroy() const;
-    virtual void unTour();
+    void unTour(int);
 protected:
 private:
     bool case_destroy;
