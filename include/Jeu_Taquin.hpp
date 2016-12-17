@@ -5,22 +5,22 @@
 class Jeu_Taquin : public Jeu
 {
 private :
+    void melanger(int*, int );
+    int rand_a_b(int, int);
+    int choixDirection();
 
 public :
     Jeu_Taquin(int x, int y );
-    virtual ~Jeu_Taquin();
-    virtual bool fini();
-    virtual void affiche();
-    virtual void unTour();
-    virtual void aGagne();
-    virtual void lancerPartie();
-    virtual void simulerPartie();
-    virtual bool jeu_Possible(); // test si le jeu est possible
+    ~Jeu_Taquin();
+    bool fini();
+    void unTour(int);
+    bool aGagne();
+    void lancerPartie();
+    void simulerPartie();
+    bool jeu_Possible(); // test si le jeu est possible
+    bool moveCase(int);
 
 protected :
 };
 
 #endif // JEU_TAQUIN_HPP
-
-
-
