@@ -15,8 +15,7 @@ public :
     virtual bool fini();
     virtual void unTour(int);
     virtual bool aGagne();
-    virtual void lancerPartie();
-    virtual void simulerPartie();
+    virtual bool moveCase(int);
 
 protected :
 

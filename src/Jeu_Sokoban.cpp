@@ -16,7 +16,3 @@ bool Jeu_Sokoban::aGagne()
 {
     return false;
 }
-
-void Jeu_Sokoban::lancerPartie() {}
-
-void Jeu_Sokoban::simulerPartie() {}

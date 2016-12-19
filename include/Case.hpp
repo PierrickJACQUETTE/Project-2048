@@ -16,13 +16,16 @@ class Case
 private :
     TypeCase typeCase;
     int nombre; //valeur de la case
+    bool acces; //pour le 2048 permet de savoir si la case est deja modifie à chaque tour
 
 public :
     Case(TypeCase=TypeCase::Vide);
     virtual ~Case();
     int getNombre() const;
+    bool getAcces() const;
     TypeCase getTypeCase() const;
     void setNombre(int);
+    void setAcces(bool);
     void setTypeCase(TypeCase);
     friend std::ostream & operator<<(std::ostream&, const Case);
 

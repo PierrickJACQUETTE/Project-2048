@@ -2,13 +2,20 @@
 
 using namespace std;
 
-Case::Case(TypeCase typeCase) : typeCase(typeCase), nombre(0) {}
+Case::Case(TypeCase typeCase) : typeCase(typeCase), nombre(0) {
+    acces = false;
+}
 
 Case::~Case() {}
 
 int Case::getNombre() const
 {
     return nombre;
+}
+
+bool Case::getAcces() const
+{
+    return acces;
 }
 
 TypeCase Case::getTypeCase() const
@@ -31,6 +38,11 @@ void Case::setNombre(int i)
         typeCase=TypeCase::Contenu;
     }
     nombre = i;
+}
+
+void Case::setAcces(bool a)
+{
+    acces = a;
 }
 
 ostream& operator<<(ostream& out, const Case c)

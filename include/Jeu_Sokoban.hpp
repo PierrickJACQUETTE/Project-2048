@@ -14,8 +14,6 @@ public :
     bool fini();
     void unTour(int);
     bool aGagne();
-    void lancerPartie();
-    void simulerPartie();
 
 protected :
 

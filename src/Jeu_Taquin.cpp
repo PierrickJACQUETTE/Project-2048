@@ -33,11 +33,6 @@ bool Jeu_Taquin::fini()
     return aGagne();
 }
 
-void Jeu_Taquin::unTour(int directionChoisie)
-{
-    moveCase(directionChoisie);
-}
-
 bool Jeu_Taquin::aGagne()
 {
     int cpt = 1;
@@ -53,46 +48,6 @@ bool Jeu_Taquin::aGagne()
         }
     }
     return (getPlateau().getCase(getPlateau().getNbX()-1, getPlateau().getNbY()-1).getTypeCase() == TypeCase::Vide)? true : false;
-}
-
-void Jeu_Taquin::lancerPartie()
-{
-    do
-    {
-        cout << endl << getPlateau() << endl;
-        unTour(choixDirection());
-    }
-    while(!fini());
-}
-
-void Jeu_Taquin::simulerPartie()
-{
-
-    do
-    {
-        cout << endl << getPlateau() << endl;
-        int random = rand_a_b(1,4);
-        if(random==1)
-        {
-            random='z';
-        }
-        else if(random==2)
-        {
-            random='q';
-        }
-        else if(random==3)
-        {
-            random='s';
-        }
-        else
-        {
-            random='d';
-        }
-        unTour(random);
-        usleep(3000000); //3sec
-    }
-    while(!fini());
-
 }
 
 bool Jeu_Taquin::jeu_Possible()
@@ -114,18 +69,9 @@ void Jeu_Taquin::melanger(int* tableau, int taille)
     }
 }
 
-int Jeu_Taquin::rand_a_b(int valeurMax, int valeurMin)
+void Jeu_Taquin::unTour(int directionChoisie)
 {
-    return (int)(((double)rand() * (double)(valeurMax - valeurMin) / (double)RAND_MAX)) + valeurMin;
-}
-
-int Jeu_Taquin::choixDirection()
-{
-    int res='a';
-    cout << "z: haut, q: gauche, s: bas et d: droite" <<endl;
-    cout << "Veuillez choisir une direction "<< endl;
-    cin >> res;
-    return res;
+    moveCase(directionChoisie);
 }
 
 bool Jeu_Taquin::moveCase(int directionChoisie)
@@ -215,7 +161,7 @@ bool Jeu_Taquin::moveCase(int directionChoisie)
             {
                 if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
                 {
-                    if(j+1 < getPlateau().getNbY())
+                    if(j+1 < getPlateau().getNbX())
                     {
                         Plateau p = getPlateau();
                         Case c= p.getCase(j+1, i);
