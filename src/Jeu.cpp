@@ -30,7 +30,10 @@ void Jeu::affiche() {}
 
 int Jeu::rand_a_b(int valeurMax, int valeurMin)
 {
-    return (int)(((double)rand() * (double)(valeurMax - valeurMin) / (double)RAND_MAX)) + valeurMin;
+    random_device rd;
+    mt19937 gen(rd());
+    uniform_int_distribution<> dis(valeurMin, valeurMax-1);
+    return dis(gen);
 }
 
 
@@ -42,6 +45,7 @@ void Jeu::lancerPartie()
         unTour(choixDirection());
     }
     while(!fini());
+    cout << endl << getPlateau() << endl;
 }
 
 void Jeu::simulerPartie()
@@ -50,7 +54,7 @@ void Jeu::simulerPartie()
     do
     {
         cout << endl << getPlateau() << endl;
-        int random = rand_a_b(1,5);
+        int random = rand_a_b(5,1);
         if(random==1)
         {
             random='z';
@@ -68,9 +72,10 @@ void Jeu::simulerPartie()
             random='d';
         }
         unTour(random);
-        usleep(3000000); //3sec
+        usleep(300000); //3sec
     }
     while(!fini());
+    cout << endl << getPlateau() << endl;
 
 }
 

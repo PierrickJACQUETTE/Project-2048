@@ -85,7 +85,7 @@ int Utilisateur::choixTaille(string s)
     bool test = true;
     do
     {
-        cout << "Entrer le " << s << " de la position : " << endl;;
+        cout << "Entrer la taille " << s << " du plateau : " << endl;;
         cin >> res;
         try
         {

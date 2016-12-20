@@ -35,4 +35,3 @@ protected :
 
 
 #endif // CASE_HPP
-

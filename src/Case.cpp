@@ -2,7 +2,8 @@
 
 using namespace std;
 
-Case::Case(TypeCase typeCase) : typeCase(typeCase), nombre(0) {
+Case::Case(TypeCase typeCase) : typeCase(typeCase), nombre(0)
+{
     acces = false;
 }
 
@@ -31,10 +32,12 @@ void Case::setTypeCase(TypeCase tC)
 
 void Case::setNombre(int i)
 {
-    if(i==0){
+    if(i==0)
+    {
         typeCase=TypeCase::Vide;
     }
-    else{
+    else
+    {
         typeCase=TypeCase::Contenu;
     }
     nombre = i;

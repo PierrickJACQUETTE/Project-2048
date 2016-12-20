@@ -57,13 +57,47 @@ bool Plateau::isFull() const
 
 ostream& operator <<(ostream& out, Plateau p)
 {
-    for(vector<Case> v: p.getPlateau())
+    for(int i = 0; i < p.getNbY(); i++)
     {
-        for(Case c: v)
+        if(i==0)
         {
-            out << c << " ";
+            for(int j = 0; j < p.getNbX(); j++)
+            {
+                out << " ------";
+            }
+            out << endl << "|";
+        }
+        for(int j = 0; j < p.getNbX(); j++)
+        {
+            string nbrEspaceDebut = " ";
+            string nbrEspaceFin = " ";
+            Case c = p.getCase(j,i);
+            if(c.getNombre() >=0 && c.getNombre() <10)
+            {
+                nbrEspaceDebut += "  ";
+                nbrEspaceFin += " ";
+            }
+            else if(c.getNombre() >=10 && c.getNombre() <100)
+            {
+                nbrEspaceDebut +=" ";
+                nbrEspaceFin +=" ";
+            }
+            else if(c.getNombre() >=100 && c.getNombre() <1000)
+            {
+                nbrEspaceDebut += " ";
+            }
+            out << nbrEspaceDebut << c << nbrEspaceFin << "|";
         }
         out << endl;
+        for(int j = 0; j < p.getNbX(); j++)
+        {
+            out << " ------";
+        }
+        out << endl;
+        if(i!=p.getNbY()-1)
+        {
+            out << "|";
+        }
     }
     return out;
 }

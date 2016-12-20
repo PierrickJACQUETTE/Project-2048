@@ -6,21 +6,17 @@
 class Jeu_Sokoban : public Jeu
 {
 
-private :
+  private :
 
-public :
-    Jeu_Sokoban(int x, int y);
-    virtual ~Jeu_Sokoban();
-    bool fini();
-    void unTour(int);
-    bool aGagne();
+  public :
+  Jeu_Sokoban(int x, int y);
+  virtual ~Jeu_Sokoban();
+  bool fini();
+  void unTour(int);
+  bool aGagne();
 
-protected :
+  protected :
 
 };
 
 #endif // JEU_SOKOBAN_HPP
-
-
-
-

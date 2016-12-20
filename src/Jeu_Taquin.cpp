@@ -24,6 +24,7 @@ Jeu_Taquin::Jeu_Taquin(int x, int y ) : Jeu(x,y)
             setPlateau(p);
         }
     }
+
 }
 
 Jeu_Taquin::~Jeu_Taquin() {}
@@ -62,7 +63,7 @@ void Jeu_Taquin::melanger(int* tableau, int taille)
     int temp=0;
     for(int i=0; i<taille; i++)
     {
-        nombre_tire=rand_a_b(1,taille);
+        nombre_tire=rand_a_b(taille,1);
         temp = tableau[i];
         tableau[i] = tableau[nombre_tire];
         tableau[nombre_tire]=temp;

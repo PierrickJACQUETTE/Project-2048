@@ -2,6 +2,7 @@
 #define JEU_HPP
 
 #include <unistd.h>
+#include <random>
 #include "Plateau.hpp"
 
 class Jeu
@@ -31,4 +32,3 @@ protected :
 };
 
 #endif // JEU_HPP
-
