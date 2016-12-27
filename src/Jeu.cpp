@@ -27,15 +27,21 @@ bool Jeu::lancerException(bool b, string s)
 }
 
 void Jeu::affiche() {}
-
+/*
 int Jeu::rand_a_b(int valeurMax, int valeurMin)
 {
     random_device rd;
     mt19937 gen(rd());
     uniform_int_distribution<> dis(valeurMin, valeurMax-1);
     return dis(gen);
-}
+}*/
 
+int Jeu::rand_a_b(int valeurMax, int valeurMin)
+{
+    int x;
+    x = rand()%(valeurMax-valeurMin) + valeurMin;
+    return x;
+}
 
 void Jeu::lancerPartie()
 {
