@@ -3,6 +3,7 @@
 
 #include <unistd.h>
 #include <random>
+#include <ctime>
 #include "Plateau.hpp"
 
 class Jeu
