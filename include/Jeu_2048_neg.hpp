@@ -10,7 +10,10 @@ public:
     Jeu_2048_neg(int x, int y);
     bool getCaseNeg() const;
     ~Jeu_2048_neg();
-    void unTour(int);
+    void fusionLeft(int, int);
+    void fusionRight(int, int);
+    void fusionUp(int, int);
+    void fusionDown(int, int);
 
 protected:
 private:

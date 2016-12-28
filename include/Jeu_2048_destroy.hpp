@@ -10,7 +10,11 @@ public:
     Jeu_2048_destroy(int x, int y);
     ~Jeu_2048_destroy();
     bool getCaseDestroy() const;
-    void unTour(int);
+    void fusionLeft(int, int);
+    void fusionRight(int, int);
+    void fusionUp(int, int);
+    void fusionDown(int, int);
+
 protected:
 private:
     bool case_destroy;

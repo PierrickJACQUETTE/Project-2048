@@ -15,16 +15,21 @@ private :
     void moveLeft();
     void moveRight();
     bool unCoupPossible();
+    void moveCase(int);
 
 public :
     Jeu_2048(int x, int y, int puissance=2);
     int getScore() const;
     void setScore(int);
     virtual ~Jeu_2048();
-    virtual bool fini();
-    virtual void unTour(int);
-    virtual bool aGagne();
-    virtual void moveCase(int);
+    bool fini();
+    void unTour(int);
+    bool aGagne();
+    virtual void fusionLeft(int, int);
+    virtual void fusionRight(int, int);
+    virtual void fusionUp(int, int);
+    virtual void fusionDown(int, int);
+
 
 protected :
 
