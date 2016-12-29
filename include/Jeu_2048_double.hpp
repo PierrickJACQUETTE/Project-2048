@@ -3,9 +3,9 @@
 
 #include <Jeu_2048.hpp>
 
-// mode case x2
 class Jeu_2048_double : public Jeu_2048
 {
+
 public:
     Jeu_2048_double(int x, int y);
     ~Jeu_2048_double();

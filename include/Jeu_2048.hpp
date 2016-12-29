@@ -4,6 +4,7 @@
 
 class Jeu_2048 : public Jeu
 {
+
 private :
     int score;
     int puissance;
@@ -19,6 +20,7 @@ private :
 public :
     Jeu_2048(int x, int y, int puissance=2);
     int getScore() const;
+    int getPuissance() const;
     void setScore(int);
     virtual ~Jeu_2048();
     bool fini();
@@ -29,9 +31,8 @@ public :
     virtual void fusionRight(int, int);
     virtual void fusionUp(int, int);
     virtual void fusionDown(int, int);
-
-
-protected :
+    void fusionLeftRight(int, int, int, bool);
+    void fusionUpDown(int, int, int, bool);
 
 };
 

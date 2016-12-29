@@ -32,6 +32,11 @@ int Jeu_2048::getScore() const
     return score;
 }
 
+int Jeu_2048::getPuissance() const
+{
+    return puissance;
+}
+
 void Jeu_2048::setScore(int i)
 {
     score = i;
@@ -104,7 +109,6 @@ bool Jeu_2048::unCoupPossible()
 
 void Jeu_2048::unTour(int directionChoisie)
 {
-    cout << "Votre score : " << score <<endl;
     moveCase(directionChoisie);
     add();
     for(int i = 0; i <getPlateau().getNbY(); i++)
@@ -118,6 +122,7 @@ void Jeu_2048::unTour(int directionChoisie)
             setPlateau(p);
         }
     }
+    cout << "Votre score : " << score <<endl;
 }
 
 void Jeu_2048::moveCase(int directionChoisie)
@@ -334,7 +339,49 @@ void Jeu_2048::moveRight()
 void Jeu_2048::fusionLeft(int j,int i)
 {
     int suivantX = j+1;
-    if(suivantX < getPlateau().getNbX() && getPlateau().getCase(suivantX,i).getNombre() == getPlateau().getCase(j,i).getNombre() &&
+    fusionLeftRight(j,i,suivantX,suivantX < getPlateau().getNbX());
+}
+
+void Jeu_2048::fusionRight(int j, int i)
+{
+    int suivantX = j-1;
+    fusionLeftRight(j,i,suivantX,suivantX>=0);
+}
+
+void Jeu_2048::fusionUp(int j, int i)
+{
+    int suivantY = i+1;
+    fusionUpDown(j,i,suivantY,suivantY< getPlateau().getNbY());
+}
+
+void Jeu_2048::fusionDown(int j, int i)
+{
+    int suivantY = i-1;
+    fusionUpDown(j,i,suivantY,suivantY>=0);
+}
+
+void Jeu_2048::fusionUpDown(int j, int i, int suivantY, bool test)
+{
+    if( test && getPlateau().getCase(j,suivantY).getNombre() == getPlateau().getCase(j,i).getNombre() &&
+            getPlateau().getCase(j,suivantY).getAcces()==false && getPlateau().getCase(j,i).getAcces()==false &&
+            getPlateau().getCase(j,i).getTypeCase() == TypeCase::Contenu && getPlateau().getCase(j,suivantY).getTypeCase() == TypeCase::Contenu)
+    {
+        Plateau p = getPlateau();
+        Case c = p.getCase(j,suivantY);
+        c.setNombre(c.getNombre()*puissance);
+        c.setAcces(true);
+        score += c.getNombre();
+        p.setCase(c,j,i);
+        c = p.getCase(j,suivantY);
+        c.setNombre(0);
+        p.setCase(c,j,suivantY);
+        setPlateau(p);
+    }
+}
+
+void Jeu_2048::fusionLeftRight(int j, int i, int suivantX, bool test)
+{
+    if( test && getPlateau().getCase(suivantX,i).getNombre() == getPlateau().getCase(j,i).getNombre() &&
             getPlateau().getCase(suivantX,i).getAcces()==false && getPlateau().getCase(j,i).getAcces()==false  &&
             getPlateau().getCase(j,i).getTypeCase() == TypeCase::Contenu && getPlateau().getCase(suivantX,i).getTypeCase() == TypeCase::Contenu)
     {
@@ -347,67 +394,6 @@ void Jeu_2048::fusionLeft(int j,int i)
         c = p.getCase(suivantX,i);
         c.setNombre(0);
         p.setCase(c,suivantX,i);
-        setPlateau(p);
-    }
-}
-
-void Jeu_2048::fusionRight(int j, int i)
-{
-    int suivantX = j-1;
-    if(suivantX>=0 && getPlateau().getCase(suivantX,i).getNombre() == getPlateau().getCase(j,i).getNombre() &&
-            getPlateau().getCase(suivantX,i).getAcces()==false && getPlateau().getCase(j,i).getAcces()==false &&
-            getPlateau().getCase(j,i).getTypeCase() == TypeCase::Contenu && getPlateau().getCase(suivantX,i).getTypeCase() == TypeCase::Contenu)
-    {
-        Plateau p = getPlateau();
-        Case c = p.getCase(suivantX,i);
-        c.setNombre(c.getNombre()*puissance);
-        c.setAcces(true);
-        score += c.getNombre();
-        p.setCase(c,j,i);
-        c = p.getCase(suivantX,i);
-        c.setNombre(0);
-        p.setCase(c,suivantX,i);
-        setPlateau(p);
-    }
-}
-
-
-void Jeu_2048::fusionUp(int j, int i)
-{
-    int suivantY = i+1;
-    if(suivantY< getPlateau().getNbY() && getPlateau().getCase(j,suivantY).getNombre() == getPlateau().getCase(j,i).getNombre() &&
-            getPlateau().getCase(j,suivantY).getAcces()==false && getPlateau().getCase(j,i).getAcces()==false &&
-            getPlateau().getCase(j,i).getTypeCase() == TypeCase::Contenu && getPlateau().getCase(j,suivantY).getTypeCase() == TypeCase::Contenu)
-    {
-        Plateau p = getPlateau();
-        Case c = p.getCase(j,suivantY);
-        c.setNombre(c.getNombre()*puissance);
-        c.setAcces(true);
-        score += c.getNombre();
-        p.setCase(c,j,i);
-        c = p.getCase(j,suivantY);
-        c.setNombre(0);
-        p.setCase(c,j,suivantY);
-        setPlateau(p);
-    }
-}
-
-void Jeu_2048::fusionDown(int j, int i)
-{
-    int suivantY = i-1;
-    if(suivantY>=0 && getPlateau().getCase(j,suivantY).getNombre() == getPlateau().getCase(j,i).getNombre() &&
-            getPlateau().getCase(j,suivantY).getAcces()==false && getPlateau().getCase(j,i).getAcces()==false &&
-            getPlateau().getCase(j,i).getTypeCase() == TypeCase::Contenu && getPlateau().getCase(j,suivantY).getTypeCase() == TypeCase::Contenu)
-    {
-        Plateau p = getPlateau();
-        Case c = p.getCase(j,suivantY);
-        c.setNombre(c.getNombre()*puissance);
-        c.setAcces(true);
-        score += c.getNombre();
-        p.setCase(c,j,i);
-        c = p.getCase(j,suivantY);
-        c.setNombre(0);
-        p.setCase(c,j,suivantY);
         setPlateau(p);
     }
 }
