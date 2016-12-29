@@ -5,9 +5,9 @@
 
 enum class TypeCase
 {
-    Contenu, Vide, Mult, Destroy, Mur, But, Personnage
+    Contenu, Vide, Mult, Destroy, Mur, But, Personnage, Box
 };
-// Contenu = 0, Vide =1, Mult=2, Destroy=3, Mur=4, But=5, Personnage=6
+// Contenu = 0, Vide =1, Mult=2, Destroy=3, Mur=4, But=5, Personnage=6, Box=7
 
 std::ostream& operator<<(std::ostream&, const TypeCase);
 
