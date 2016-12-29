@@ -89,7 +89,7 @@ int Utilisateur::choixTaille(string s)
         cin >> res;
         try
         {
-            test = !Jeu::lancerException(res<0 , "Taille negatif, requis POSITIF");
+            test = !Jeu::lancerException(res<=0 , "Taille negatif, requis POSITIF");
         }
         catch(string const& chaine)
         {

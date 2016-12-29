@@ -48,6 +48,26 @@ void Case::setAcces(bool a)
     acces = a;
 }
 
+void Case::setX(int nb)
+{
+    x = nb;
+}
+
+void Case::setY(int nb)
+{
+    y = nb;
+}
+
+int Case::getX()
+{
+    return x;
+}
+
+int Case::getY()
+{
+    return y;
+}
+
 ostream& operator<<(ostream& out, const Case c)
 {
     if (c.nombre!=0 && c.typeCase==TypeCase::Contenu)
@@ -81,12 +101,18 @@ ostream& operator<<(ostream& out, const TypeCase typeCase)
         out << "M";
         break;
     case TypeCase::But:
-        out << "T";
+        out << "G";
         break;
     case TypeCase::Personnage:
         out << "P";
         break;
     case TypeCase::Box:
+        out << "O";
+        break;
+    case TypeCase::Final:
+        out << "X";
+        break;
+    case TypeCase::PersBut:
         out << "B";
         break;
     }
