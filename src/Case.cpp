@@ -50,7 +50,27 @@ void Case::setAcces(bool a)
 
 ostream& operator<<(ostream& out, const Case c)
 {
-    return (c.nombre!=0)? out<<c.nombre: out<<c.typeCase;
+    if (c.nombre!=0)
+    {
+        if(c.typeCase==TypeCase::Mult)
+        {
+            out << c.typeCase;
+            out << c.nombre;
+        }
+        else if(c.typeCase==TypeCase::Contenu)
+        {
+            out << c.nombre;
+        }
+        else if(c.typeCase==TypeCase::Destroy || c.typeCase==TypeCase::Mult)
+        {
+            out << c.typeCase;
+        }
+    }
+    else
+    {
+        out << c.typeCase;
+    }
+    return out;
 }
 
 ostream& operator<<(ostream& out, const TypeCase typeCase)
@@ -62,6 +82,12 @@ ostream& operator<<(ostream& out, const TypeCase typeCase)
         break;
     case TypeCase::Vide:
         out << ".";
+        break;
+    case TypeCase::Mult:
+        out << "x2";
+        break;
+    case TypeCase::Destroy:
+        out << "D";
         break;
     case TypeCase::Mur:
         out << "M";

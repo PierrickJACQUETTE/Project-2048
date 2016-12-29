@@ -72,19 +72,26 @@ ostream& operator <<(ostream& out, Plateau p)
             string nbrEspaceDebut = " ";
             string nbrEspaceFin = " ";
             Case c = p.getCase(j,i);
-            if(c.getNombre() >=0 && c.getNombre() <10)
+            if((c.getNombre() >=0 && c.getNombre() <10 && c.getTypeCase()!=TypeCase::Mult )|| c.getTypeCase()!=TypeCase::Destroy)
             {
                 nbrEspaceDebut += "  ";
                 nbrEspaceFin += " ";
             }
-            else if(c.getNombre() >=10 && c.getNombre() <100)
+            else if((c.getNombre() >=10 && c.getNombre() <100 && c.getTypeCase()!=TypeCase::Mult) ||
+                    (c.getNombre()<0 && c.getNombre()>=-9) ||
+                    (c.getTypeCase()==TypeCase::Mult))
             {
                 nbrEspaceDebut +=" ";
                 nbrEspaceFin +=" ";
             }
-            else if(c.getNombre() >=100 && c.getNombre() <1000)
+            else if((c.getNombre() >=100 && c.getNombre() <1000 && c.getTypeCase()!=TypeCase::Mult) ||
+                    (c.getNombre()<-9 && c.getNombre()>=-99))
             {
                 nbrEspaceDebut += " ";
+            }
+            else if(c.getNombre()<-999 && c.getNombre()>=-9999)
+            {
+                nbrEspaceFin = "";
             }
             out << nbrEspaceDebut << c << nbrEspaceFin << "|";
         }

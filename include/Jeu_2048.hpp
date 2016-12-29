@@ -8,7 +8,6 @@ private :
     int score;
     int puissance;
 
-    int initNombre();
     void add();
     void moveDown();
     void moveUp();
@@ -25,6 +24,7 @@ public :
     bool fini();
     void unTour(int);
     bool aGagne();
+    virtual Case initNombre(Case);
     virtual void fusionLeft(int, int);
     virtual void fusionRight(int, int);
     virtual void fusionUp(int, int);

@@ -9,6 +9,7 @@ class Jeu_2048_destroy : public Jeu_2048
 public:
     Jeu_2048_destroy(int x, int y);
     ~Jeu_2048_destroy();
+    Case initNombre(Case);
     bool getCaseDestroy() const;
     void fusionLeft(int, int);
     void fusionRight(int, int);
@@ -16,8 +17,6 @@ public:
     void fusionDown(int, int);
 
 protected:
-private:
-    bool case_destroy;
 };
 
 #endif // JEU_2048_DESTROY_HPP
