@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>C++ -- M1 LOA:  Fichier source de Jeu_Taquin.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">C++ -- M1 LOA
+   </div>
+   <div id="projectbrief">Le projet a pour but la construction d&#39;une plateform permettant d&#39;implementer plusieurs jeux proches : il s&#39;agit de jeux de dÃ©placement de blocs avec diffÃ©rents buts et modalitÃ©s selon le jeu</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Amis</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Jeu_Taquin.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Jeu__Taquin_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef JEU_TAQUIN_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define JEU_TAQUIN_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="Jeu_8hpp.html">Jeu.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classJeu__Taquin.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJeu__Taquin.html">Jeu_Taquin</a> : <span class="keyword">public</span> <a class="code" href="classJeu.html">Jeu</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span> :</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="classCase.html">Case</a> vide;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">void</span> setVide(<span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j); <span class="comment">//Met a jour les param�tres de la Case vide</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">void</span> modifier_case(<a class="code" href="classPlateau.html">Plateau</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);<span class="comment">//M�thode pour faire le mouvement de la case vide</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> melanger(<span class="keywordtype">int</span>*, <span class="keywordtype">int</span> );</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> set_case_vide(<a class="code" href="classPlateau.html">Plateau</a> p, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">public</span> :</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classJeu__Taquin.html#aac32e4a4d4df18cac121c4eb27d161f2">Jeu_Taquin</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y );</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="classJeu__Taquin.html#a8c7113521477348652d46ebb4d741fe3">~Jeu_Taquin</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJeu__Taquin.html#a4ce436f6cd50ad388d3c738fa45bc10e">fini</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJeu__Taquin.html#ada7ef56e60ae3dcd17a2113ba64d42b3">unTour</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJeu__Taquin.html#ac984a4f7d0db134aae001ebce7128e5b">aGagne</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJeu__Taquin.html#a74ff2e60ceba601b1826bec4d37e7c53">moveCase</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">protected</span> :</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif // JEU_TAQUIN_HPP</span></div>
+<div class="ttc" id="classJeu__Taquin_html"><div class="ttname"><a href="classJeu__Taquin.html">Jeu_Taquin</a></div><div class="ttdef"><b>Definition:</b> Jeu_Taquin.hpp:12</div></div>
+<div class="ttc" id="classCase_html"><div class="ttname"><a href="classCase.html">Case</a></div><div class="ttdef"><b>Definition:</b> Case.hpp:28</div></div>
+<div class="ttc" id="classJeu__Taquin_html_a4ce436f6cd50ad388d3c738fa45bc10e"><div class="ttname"><a href="classJeu__Taquin.html#a4ce436f6cd50ad388d3c738fa45bc10e">Jeu_Taquin::fini</a></div><div class="ttdeci">bool fini()</div><div class="ttdoc">Fonction permettant de savoir si le jeu est fini. </div><div class="ttdef"><b>Definition:</b> Jeu_Taquin.cpp:34</div></div>
+<div class="ttc" id="classJeu__Taquin_html_a8c7113521477348652d46ebb4d741fe3"><div class="ttname"><a href="classJeu__Taquin.html#a8c7113521477348652d46ebb4d741fe3">Jeu_Taquin::~Jeu_Taquin</a></div><div class="ttdeci">~Jeu_Taquin()</div><div class="ttdoc">Destructeur du jeu. </div><div class="ttdef"><b>Definition:</b> Jeu_Taquin.cpp:32</div></div>
+<div class="ttc" id="classJeu__Taquin_html_a74ff2e60ceba601b1826bec4d37e7c53"><div class="ttname"><a href="classJeu__Taquin.html#a74ff2e60ceba601b1826bec4d37e7c53">Jeu_Taquin::moveCase</a></div><div class="ttdeci">bool moveCase(int)</div><div class="ttdoc">Fonction permettant de d�placer dans une direction une case. </div><div class="ttdef"><b>Definition:</b> Jeu_Taquin.cpp:108</div></div>
+<div class="ttc" id="classJeu_html"><div class="ttname"><a href="classJeu.html">Jeu</a></div><div class="ttdef"><b>Definition:</b> Jeu.hpp:15</div></div>
+<div class="ttc" id="classJeu__Taquin_html_aac32e4a4d4df18cac121c4eb27d161f2"><div class="ttname"><a href="classJeu__Taquin.html#aac32e4a4d4df18cac121c4eb27d161f2">Jeu_Taquin::Jeu_Taquin</a></div><div class="ttdeci">Jeu_Taquin(int x, int y)</div><div class="ttdoc">Constructeur du jeux. </div><div class="ttdef"><b>Definition:</b> Jeu_Taquin.cpp:4</div></div>
+<div class="ttc" id="classJeu__Taquin_html_ac984a4f7d0db134aae001ebce7128e5b"><div class="ttname"><a href="classJeu__Taquin.html#ac984a4f7d0db134aae001ebce7128e5b">Jeu_Taquin::aGagne</a></div><div class="ttdeci">bool aGagne()</div><div class="ttdoc">Fonction permettant de savoir si on a gagn� </div><div class="ttdef"><b>Definition:</b> Jeu_Taquin.cpp:39</div></div>
+<div class="ttc" id="classPlateau_html"><div class="ttname"><a href="classPlateau.html">Plateau</a></div><div class="ttdef"><b>Definition:</b> Plateau.hpp:13</div></div>
+<div class="ttc" id="Jeu_8hpp_html"><div class="ttname"><a href="Jeu_8hpp.html">Jeu.hpp</a></div><div class="ttdoc">Classe pour representer un jeu. </div></div>
+<div class="ttc" id="classJeu__Taquin_html_ada7ef56e60ae3dcd17a2113ba64d42b3"><div class="ttname"><a href="classJeu__Taquin.html#ada7ef56e60ae3dcd17a2113ba64d42b3">Jeu_Taquin::unTour</a></div><div class="ttdeci">void unTour(int)</div><div class="ttdoc">Fonction permettant de faire un Tour dans le jeu. </div><div class="ttdef"><b>Definition:</b> Jeu_Taquin.cpp:90</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 30 Décembre 2016 17:51:13 pour C++ -- M1 LOA par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

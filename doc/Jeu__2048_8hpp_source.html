@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>C++ -- M1 LOA:  Fichier source de Jeu_2048.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">C++ -- M1 LOA
+   </div>
+   <div id="projectbrief">Le projet a pour but la construction d&#39;une plateform permettant d&#39;implementer plusieurs jeux proches : il s&#39;agit de jeux de dÃ©placement de blocs avec diffÃ©rents buts et modalitÃ©s selon le jeu</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Amis</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Jeu_2048.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Jeu__2048_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef JEU_2048_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define JEU_2048_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="Jeu_8hpp.html">Jeu.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="classJeu__2048.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJeu__2048.html">Jeu_2048</a> : <span class="keyword">public</span> <a class="code" href="classJeu.html">Jeu</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">private</span> :</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> score;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">int</span> puissance;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> add();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> moveDown();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">void</span> moveUp();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> moveLeft();</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">void</span> moveRight();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">bool</span> unCoupPossible();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> moveCase(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">public</span> :</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="classJeu__2048.html#a81519287ef8d44e3f79dcf426cd0361f">Jeu_2048</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">int</span> puissance=2);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classJeu__2048.html#ad62b852ba17d0d1af6e2a7dfe2aa30f3">getScore</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classJeu__2048.html#a560e733640a5803ea2140041c6a1d1bc">getPuissance</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#a1b4c357f1a39464bacbf789b4d71552b">setScore</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classJeu__2048.html#a7aef7a77ef749f12126a8ae3e241397e">~Jeu_2048</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJeu__2048.html#a869d35afc515a6b5b774a93760fbb0fa">fini</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#af9817bbd3500b7c81efd2dc4bef4ce1f">unTour</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJeu__2048.html#a1d19fdb220fda29babe9af479c1caa9b">aGagne</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classCase.html">Case</a> <a class="code" href="classJeu__2048.html#af0a4ab15a24b87ca17848402353f0691">initNombre</a>(<a class="code" href="classCase.html">Case</a>);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#a7d2f3457c84f101f9a7a5dffe0c9e279">fusionLeft</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#ac62fef264a5b77d89b20967ca84b6414">fusionRight</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#ab5d8d542817a3cee581bdfa487d43dd9">fusionUp</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#ad4e77dc82d9a1ce8c30b13288277bf65">fusionDown</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#a7db1c33379607b1f8d092675c0cb83d0">fusionLeftRight</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJeu__2048.html#abd454c1fab6dd83d7c9016da77923815">fusionUpDown</a>(<span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">int</span>, <span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;};</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="preprocessor">#endif // JEU_2048_HPP</span></div>
+<div class="ttc" id="classCase_html"><div class="ttname"><a href="classCase.html">Case</a></div><div class="ttdef"><b>Definition:</b> Case.hpp:28</div></div>
+<div class="ttc" id="classJeu__2048_html_a1b4c357f1a39464bacbf789b4d71552b"><div class="ttname"><a href="classJeu__2048.html#a1b4c357f1a39464bacbf789b4d71552b">Jeu_2048::setScore</a></div><div class="ttdeci">void setScore(int)</div><div class="ttdoc">Setter du score. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:40</div></div>
+<div class="ttc" id="classJeu__2048_html_af9817bbd3500b7c81efd2dc4bef4ce1f"><div class="ttname"><a href="classJeu__2048.html#af9817bbd3500b7c81efd2dc4bef4ce1f">Jeu_2048::unTour</a></div><div class="ttdeci">void unTour(int)</div><div class="ttdoc">Fonction permettant de faire un Tour dans le jeu. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:110</div></div>
+<div class="ttc" id="classJeu__2048_html_ab5d8d542817a3cee581bdfa487d43dd9"><div class="ttname"><a href="classJeu__2048.html#ab5d8d542817a3cee581bdfa487d43dd9">Jeu_2048::fusionUp</a></div><div class="ttdeci">virtual void fusionUp(int, int)</div><div class="ttdoc">Fonction permettant de déplacer vers le haut. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:351</div></div>
+<div class="ttc" id="classJeu__2048_html_af0a4ab15a24b87ca17848402353f0691"><div class="ttname"><a href="classJeu__2048.html#af0a4ab15a24b87ca17848402353f0691">Jeu_2048::initNombre</a></div><div class="ttdeci">virtual Case initNombre(Case)</div><div class="ttdoc">Fonction permettant d&#39;initialiser une case avec un nombre à chaque tour. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:22</div></div>
+<div class="ttc" id="classJeu__2048_html_a1d19fdb220fda29babe9af479c1caa9b"><div class="ttname"><a href="classJeu__2048.html#a1d19fdb220fda29babe9af479c1caa9b">Jeu_2048::aGagne</a></div><div class="ttdeci">bool aGagne()</div><div class="ttdoc">Fonction permettant de savoir si on a gagné </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:50</div></div>
+<div class="ttc" id="classJeu__2048_html_a81519287ef8d44e3f79dcf426cd0361f"><div class="ttname"><a href="classJeu__2048.html#a81519287ef8d44e3f79dcf426cd0361f">Jeu_2048::Jeu_2048</a></div><div class="ttdeci">Jeu_2048(int x, int y, int puissance=2)</div><div class="ttdoc">Constructeur du Jeu 2048. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:5</div></div>
+<div class="ttc" id="classJeu__2048_html_abd454c1fab6dd83d7c9016da77923815"><div class="ttname"><a href="classJeu__2048.html#abd454c1fab6dd83d7c9016da77923815">Jeu_2048::fusionUpDown</a></div><div class="ttdeci">void fusionUpDown(int, int, int, bool)</div><div class="ttdoc">Fonction permettant de déplacer vers le haut ou bas. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:363</div></div>
+<div class="ttc" id="classJeu__2048_html_a7d2f3457c84f101f9a7a5dffe0c9e279"><div class="ttname"><a href="classJeu__2048.html#a7d2f3457c84f101f9a7a5dffe0c9e279">Jeu_2048::fusionLeft</a></div><div class="ttdeci">virtual void fusionLeft(int, int)</div><div class="ttdoc">Fonction permettant de déplacer vers la gauche. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:339</div></div>
+<div class="ttc" id="classJeu__2048_html_ad62b852ba17d0d1af6e2a7dfe2aa30f3"><div class="ttname"><a href="classJeu__2048.html#ad62b852ba17d0d1af6e2a7dfe2aa30f3">Jeu_2048::getScore</a></div><div class="ttdeci">int getScore() const </div><div class="ttdoc">Getter du score du jeu. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:30</div></div>
+<div class="ttc" id="classJeu__2048_html_ad4e77dc82d9a1ce8c30b13288277bf65"><div class="ttname"><a href="classJeu__2048.html#ad4e77dc82d9a1ce8c30b13288277bf65">Jeu_2048::fusionDown</a></div><div class="ttdeci">virtual void fusionDown(int, int)</div><div class="ttdoc">Fonction permettant de déplacer vers le bas. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:357</div></div>
+<div class="ttc" id="classJeu__2048_html_a560e733640a5803ea2140041c6a1d1bc"><div class="ttname"><a href="classJeu__2048.html#a560e733640a5803ea2140041c6a1d1bc">Jeu_2048::getPuissance</a></div><div class="ttdeci">int getPuissance() const </div><div class="ttdoc">Getter de la puissance de jeu. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:35</div></div>
+<div class="ttc" id="classJeu_html"><div class="ttname"><a href="classJeu.html">Jeu</a></div><div class="ttdef"><b>Definition:</b> Jeu.hpp:15</div></div>
+<div class="ttc" id="classJeu__2048_html_ac62fef264a5b77d89b20967ca84b6414"><div class="ttname"><a href="classJeu__2048.html#ac62fef264a5b77d89b20967ca84b6414">Jeu_2048::fusionRight</a></div><div class="ttdeci">virtual void fusionRight(int, int)</div><div class="ttdoc">Fonction permettant de déplacer vers la droite. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:345</div></div>
+<div class="ttc" id="Jeu_8hpp_html"><div class="ttname"><a href="Jeu_8hpp.html">Jeu.hpp</a></div><div class="ttdoc">Classe pour representer un jeu. </div></div>
+<div class="ttc" id="classJeu__2048_html_a7aef7a77ef749f12126a8ae3e241397e"><div class="ttname"><a href="classJeu__2048.html#a7aef7a77ef749f12126a8ae3e241397e">Jeu_2048::~Jeu_2048</a></div><div class="ttdeci">virtual ~Jeu_2048()</div><div class="ttdoc">Destructeur du jeu. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:20</div></div>
+<div class="ttc" id="classJeu__2048_html_a869d35afc515a6b5b774a93760fbb0fa"><div class="ttname"><a href="classJeu__2048.html#a869d35afc515a6b5b774a93760fbb0fa">Jeu_2048::fini</a></div><div class="ttdeci">bool fini()</div><div class="ttdoc">Fonction permettant de savoir si le jeu est fini. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:45</div></div>
+<div class="ttc" id="classJeu__2048_html_a7db1c33379607b1f8d092675c0cb83d0"><div class="ttname"><a href="classJeu__2048.html#a7db1c33379607b1f8d092675c0cb83d0">Jeu_2048::fusionLeftRight</a></div><div class="ttdeci">void fusionLeftRight(int, int, int, bool)</div><div class="ttdoc">Fonction permettant de déplacer vers la droite ou gauche. </div><div class="ttdef"><b>Definition:</b> Jeu_2048.cpp:382</div></div>
+<div class="ttc" id="classJeu__2048_html"><div class="ttname"><a href="classJeu__2048.html">Jeu_2048</a></div><div class="ttdef"><b>Definition:</b> Jeu_2048.hpp:11</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 30 Décembre 2016 17:51:13 pour C++ -- M1 LOA par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

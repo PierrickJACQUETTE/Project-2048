@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>C++ -- M1 LOA:  Fichier source de Case.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">C++ -- M1 LOA
+   </div>
+   <div id="projectbrief">Le projet a pour but la construction d&#39;une plateform permettant d&#39;implementer plusieurs jeux proches : il s&#39;agit de jeux de dÃ©placement de blocs avec diffÃ©rents buts et modalitÃ©s selon le jeu</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Amis</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Case.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Case_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef CASE_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define CASE_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="keyword">enum class</span> TypeCase</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    Contenu, Vide, Mult, Destroy, Mur, But, Personnage, Box, Final, PersBut</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">// Contenu = 0, Vide =1, Mult=2, Destroy=3, Mur=4, But=5, Personnage=6, Box=7</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;std::ostream&amp; operator&lt;&lt;(std::ostream&amp;, <span class="keyword">const</span> TypeCase);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classCase.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCase.html">Case</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">private</span> :</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    TypeCase typeCase;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordtype">int</span> nombre; <span class="comment">//valeur de la case</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">int</span> x;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">int</span> y;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">bool</span> acces; <span class="comment">//pour le 2048 permet de savoir si la case est deja modifie à chaque tour</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">public</span> :</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="classCase.html#a2e6f9f391b68816c67eb4f036fd3eeb3">Case</a>(TypeCase=TypeCase::Vide);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classCase.html#ab004564aae3e15db0c7fd5dde0b4c379">~Case</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCase.html#ab289021f505c377cf25cbbfd3c0739eb">getNombre</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classCase.html#af1c9a94825c209ca28d511d56ab87f16">getAcces</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    TypeCase <a class="code" href="classCase.html#a29ff21a91a58b9e4b1a454ecb4eb263a">getTypeCase</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCase.html#a017b1f216fbe2db8a28255d05cd41668">setNombre</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCase.html#a5315b4118feb8a7b712703ddd0ec240a">setAcces</a>(<span class="keywordtype">bool</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCase.html#ac8c66b59835e1e793791ae2185bd136a">setTypeCase</a>(TypeCase);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCase.html#a8451e9cd70ff26dfc863df5e0e2ee91a">setX</a>(<span class="keywordtype">int</span> x);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classCase.html#a3378228d7d927c7016469f21567a77e4">setY</a>(<span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCase.html#ab5580b919199dd2ec379672d3390bbff">getX</a>();</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classCase.html#a824f612c5a660a1d55ac06931747c46d">getY</a>();</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    <span class="keyword">friend</span> std::ostream &amp; <a class="code" href="classCase.html#a77cbfc3d59c203e95216727855b20df0">operator&lt;&lt;</a>(std::ostream&amp;, <span class="keyword">const</span> <a class="code" href="classCase.html">Case</a>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;};</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif // CASE_HPP</span></div>
+<div class="ttc" id="classCase_html_ab004564aae3e15db0c7fd5dde0b4c379"><div class="ttname"><a href="classCase.html#ab004564aae3e15db0c7fd5dde0b4c379">Case::~Case</a></div><div class="ttdeci">virtual ~Case()</div><div class="ttdoc">Destructeur d&#39;une case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:10</div></div>
+<div class="ttc" id="classCase_html"><div class="ttname"><a href="classCase.html">Case</a></div><div class="ttdef"><b>Definition:</b> Case.hpp:28</div></div>
+<div class="ttc" id="classCase_html_a29ff21a91a58b9e4b1a454ecb4eb263a"><div class="ttname"><a href="classCase.html#a29ff21a91a58b9e4b1a454ecb4eb263a">Case::getTypeCase</a></div><div class="ttdeci">TypeCase getTypeCase() const </div><div class="ttdoc">Getter du type de la case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:22</div></div>
+<div class="ttc" id="classCase_html_af1c9a94825c209ca28d511d56ab87f16"><div class="ttname"><a href="classCase.html#af1c9a94825c209ca28d511d56ab87f16">Case::getAcces</a></div><div class="ttdeci">bool getAcces() const </div><div class="ttdoc">Getter de l&#39;accés à la case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:17</div></div>
+<div class="ttc" id="classCase_html_a5315b4118feb8a7b712703ddd0ec240a"><div class="ttname"><a href="classCase.html#a5315b4118feb8a7b712703ddd0ec240a">Case::setAcces</a></div><div class="ttdeci">void setAcces(bool)</div><div class="ttdoc">Setter sur l&#39;accés d&#39;une case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:46</div></div>
+<div class="ttc" id="classCase_html_a8451e9cd70ff26dfc863df5e0e2ee91a"><div class="ttname"><a href="classCase.html#a8451e9cd70ff26dfc863df5e0e2ee91a">Case::setX</a></div><div class="ttdeci">void setX(int x)</div><div class="ttdoc">Setter de X. </div><div class="ttdef"><b>Definition:</b> Case.cpp:51</div></div>
+<div class="ttc" id="classCase_html_ab289021f505c377cf25cbbfd3c0739eb"><div class="ttname"><a href="classCase.html#ab289021f505c377cf25cbbfd3c0739eb">Case::getNombre</a></div><div class="ttdeci">int getNombre() const </div><div class="ttdoc">Getter du nombre de la case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:12</div></div>
+<div class="ttc" id="classCase_html_ac8c66b59835e1e793791ae2185bd136a"><div class="ttname"><a href="classCase.html#ac8c66b59835e1e793791ae2185bd136a">Case::setTypeCase</a></div><div class="ttdeci">void setTypeCase(TypeCase)</div><div class="ttdoc">Setter du type de la case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:28</div></div>
+<div class="ttc" id="classCase_html_ab5580b919199dd2ec379672d3390bbff"><div class="ttname"><a href="classCase.html#ab5580b919199dd2ec379672d3390bbff">Case::getX</a></div><div class="ttdeci">int getX()</div><div class="ttdoc">Getter de X. </div><div class="ttdef"><b>Definition:</b> Case.cpp:61</div></div>
+<div class="ttc" id="classCase_html_a77cbfc3d59c203e95216727855b20df0"><div class="ttname"><a href="classCase.html#a77cbfc3d59c203e95216727855b20df0">Case::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;, const Case)</div><div class="ttdoc">Fonction de surdéfinition de l&#39;affichage pour une case. </div></div>
+<div class="ttc" id="classCase_html_a3378228d7d927c7016469f21567a77e4"><div class="ttname"><a href="classCase.html#a3378228d7d927c7016469f21567a77e4">Case::setY</a></div><div class="ttdeci">void setY(int y)</div><div class="ttdoc">Setter de Y. </div><div class="ttdef"><b>Definition:</b> Case.cpp:56</div></div>
+<div class="ttc" id="classCase_html_a2e6f9f391b68816c67eb4f036fd3eeb3"><div class="ttname"><a href="classCase.html#a2e6f9f391b68816c67eb4f036fd3eeb3">Case::Case</a></div><div class="ttdeci">Case(TypeCase=TypeCase::Vide)</div><div class="ttdoc">Constructeur d&#39;une case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:5</div></div>
+<div class="ttc" id="classCase_html_a824f612c5a660a1d55ac06931747c46d"><div class="ttname"><a href="classCase.html#a824f612c5a660a1d55ac06931747c46d">Case::getY</a></div><div class="ttdeci">int getY()</div><div class="ttdoc">Getters de Y. </div><div class="ttdef"><b>Definition:</b> Case.cpp:66</div></div>
+<div class="ttc" id="classCase_html_a017b1f216fbe2db8a28255d05cd41668"><div class="ttname"><a href="classCase.html#a017b1f216fbe2db8a28255d05cd41668">Case::setNombre</a></div><div class="ttdeci">void setNombre(int)</div><div class="ttdoc">Setter du nombre contenu dans la case. </div><div class="ttdef"><b>Definition:</b> Case.cpp:33</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 30 Décembre 2016 17:51:13 pour C++ -- M1 LOA par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

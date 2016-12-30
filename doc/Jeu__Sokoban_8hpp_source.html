@@ -1,0 +1,138 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>C++ -- M1 LOA:  Fichier source de Jeu_Sokoban.hpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">C++ -- M1 LOA
+   </div>
+   <div id="projectbrief">Le projet a pour but la construction d&#39;une plateform permettant d&#39;implementer plusieurs jeux proches : il s&#39;agit de jeux de dÃ©placement de blocs avec diffÃ©rents buts et modalitÃ©s selon le jeu</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Généré par Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Recherche');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Page&#160;principale</span></a></li>
+      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="files.html"><span>Fichiers</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Recherche" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Liste&#160;des&#160;fichiers</span></a></li>
+    </ul>
+  </div>
+</div><!-- top -->
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>Tout</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Fichiers</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Fonctions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Amis</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="headertitle">
+<div class="title">Jeu_Sokoban.hpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="Jeu__Sokoban_8hpp.html">Aller à la documentation de ce fichier.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef JEU_SOKOBAN_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define JEU_SOKOBAN_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="Jeu_8hpp.html">Jeu.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="classJeu__Sokoban.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classJeu__Sokoban.html">Jeu_Sokoban</a> : <span class="keyword">public</span> <a class="code" href="classJeu.html">Jeu</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;  <span class="keyword">private</span> :</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;      <a class="code" href="classCase.html">Case</a> pers;</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;      <span class="keywordtype">bool</span> mur;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;      <span class="keywordtype">void</span> initialise_plateau(TypeCase* , <span class="keywordtype">int</span>);<span class="comment">// Permet de remplir le plateau avec des cases vides des murs les box les &quot;buts&quot; et le personnage</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;      <span class="keywordtype">bool</span> case_libre(<a class="code" href="classPlateau.html">Plateau</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j); <span class="comment">//renvoie vrai si la case est libre ou un &quot;but&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;      <span class="keywordtype">void</span> setPers(<a class="code" href="classPlateau.html">Plateau</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j); <span class="comment">//Met a jour les paramètres de la Case pers</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;      <span class="keywordtype">void</span> modifier_case(<a class="code" href="classPlateau.html">Plateau</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j);<span class="comment">//Méthode pour faire le mouvement du joueur</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;      <span class="keywordtype">void</span> modifier_box(<a class="code" href="classPlateau.html">Plateau</a> p, <span class="keywordtype">int</span> i, <span class="keywordtype">int</span> j, <span class="keywordtype">int</span> iprec, <span class="keywordtype">int</span> jprec);<span class="comment">//Méthode pour faire le mouvement de la caisse</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;      <span class="keywordtype">bool</span> bool_mur(); <span class="comment">//Pour savoir si on veut des murs</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;      <span class="keywordtype">void</span> affiche_legende();<span class="comment">//Afficher la legende</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;  <span class="keyword">public</span> :</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classJeu__Sokoban.html#ad3186c87f4c9db7d3d063298d968af5f">Jeu_Sokoban</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">bool</span> <span class="keywordtype">boolean</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keyword">virtual</span> <a class="code" href="classJeu__Sokoban.html#a05dbecbf7b5dbeeec66cc9a00374bb51">~Jeu_Sokoban</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJeu__Sokoban.html#a390c97e3a3df50cfbd328726b2b62617">fini</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classJeu__Sokoban.html#a6c5b82d2b71e25c8f2488e82718bbab2">unTour</a>(<span class="keywordtype">int</span>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="classJeu__Sokoban.html#a5f78d5cb073b3029c6ecf7443bf3218a">aGagne</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;  <span class="keyword">protected</span> :</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;};</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#endif // JEU_SOKOBAN_HPP</span></div>
+<div class="ttc" id="classJeu__Sokoban_html_a5f78d5cb073b3029c6ecf7443bf3218a"><div class="ttname"><a href="classJeu__Sokoban.html#a5f78d5cb073b3029c6ecf7443bf3218a">Jeu_Sokoban::aGagne</a></div><div class="ttdeci">bool aGagne()</div><div class="ttdoc">Fonction permettant de savoir si on a gagné </div><div class="ttdef"><b>Definition:</b> Jeu_Sokoban.cpp:233</div></div>
+<div class="ttc" id="classCase_html"><div class="ttname"><a href="classCase.html">Case</a></div><div class="ttdef"><b>Definition:</b> Case.hpp:28</div></div>
+<div class="ttc" id="classJeu__Sokoban_html_a6c5b82d2b71e25c8f2488e82718bbab2"><div class="ttname"><a href="classJeu__Sokoban.html#a6c5b82d2b71e25c8f2488e82718bbab2">Jeu_Sokoban::unTour</a></div><div class="ttdeci">void unTour(int)</div><div class="ttdoc">Fonction permettant de faire un Tour dans le jeu. </div><div class="ttdef"><b>Definition:</b> Jeu_Sokoban.cpp:148</div></div>
+<div class="ttc" id="classJeu_html"><div class="ttname"><a href="classJeu.html">Jeu</a></div><div class="ttdef"><b>Definition:</b> Jeu.hpp:15</div></div>
+<div class="ttc" id="classJeu__Sokoban_html"><div class="ttname"><a href="classJeu__Sokoban.html">Jeu_Sokoban</a></div><div class="ttdef"><b>Definition:</b> Jeu_Sokoban.hpp:12</div></div>
+<div class="ttc" id="classJeu__Sokoban_html_a05dbecbf7b5dbeeec66cc9a00374bb51"><div class="ttname"><a href="classJeu__Sokoban.html#a05dbecbf7b5dbeeec66cc9a00374bb51">Jeu_Sokoban::~Jeu_Sokoban</a></div><div class="ttdeci">virtual ~Jeu_Sokoban()</div><div class="ttdoc">Destructeur du jeu Sokoban. </div><div class="ttdef"><b>Definition:</b> Jeu_Sokoban.cpp:30</div></div>
+<div class="ttc" id="classPlateau_html"><div class="ttname"><a href="classPlateau.html">Plateau</a></div><div class="ttdef"><b>Definition:</b> Plateau.hpp:13</div></div>
+<div class="ttc" id="Jeu_8hpp_html"><div class="ttname"><a href="Jeu_8hpp.html">Jeu.hpp</a></div><div class="ttdoc">Classe pour representer un jeu. </div></div>
+<div class="ttc" id="classJeu__Sokoban_html_a390c97e3a3df50cfbd328726b2b62617"><div class="ttname"><a href="classJeu__Sokoban.html#a390c97e3a3df50cfbd328726b2b62617">Jeu_Sokoban::fini</a></div><div class="ttdeci">bool fini()</div><div class="ttdoc">Fonction permettant de savoir si le jeu est fini. </div><div class="ttdef"><b>Definition:</b> Jeu_Sokoban.cpp:84</div></div>
+<div class="ttc" id="classJeu__Sokoban_html_ad3186c87f4c9db7d3d063298d968af5f"><div class="ttname"><a href="classJeu__Sokoban.html#ad3186c87f4c9db7d3d063298d968af5f">Jeu_Sokoban::Jeu_Sokoban</a></div><div class="ttdeci">Jeu_Sokoban(int x, int y, bool boolean)</div><div class="ttdoc">Constructeur du jeu Sokoban. </div><div class="ttdef"><b>Definition:</b> Jeu_Sokoban.cpp:4</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Généré le Vendredi 30 Décembre 2016 17:51:13 pour C++ -- M1 LOA par &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>
