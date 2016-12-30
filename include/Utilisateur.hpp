@@ -22,6 +22,7 @@ private:
     static int choix2048();
     static int choixJoueur();
     static Jeu* fonction2048(int, int, int);
+    static bool bool_mur();
 };
 
 #endif // UTILISATEUR_HPP

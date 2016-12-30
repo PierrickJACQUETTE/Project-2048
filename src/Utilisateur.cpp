@@ -25,7 +25,8 @@ void Utilisateur::start()
     }
     case 2:
     {
-        jeux = new Jeu_Sokoban(x,y);
+        bool b = bool_mur();
+        jeux = new Jeu_Sokoban(x,y, b);
         break;
     }
     }
@@ -165,3 +166,27 @@ int Utilisateur::choixJoueur()
     while(test);
     return res;
 }
+
+bool Utilisateur::bool_mur()
+{
+    bool test = true;
+    char res;
+    do
+    {
+        cout << "Voulez vous des murs ? Y pour oui N pour non"<< endl;;
+               cout << "z: haut, q: gauche, s: bas et d: droite" <<endl;
+        cout << "Veuillez choisir une direction "<< endl;
+        cin >> res;
+        try
+        {
+            test = !Jeu::lancerException((res!='y' && res!='n' && res!='Y' && res!='N') , "Réponse inconnue : Y ou N");
+        }
+        catch(string const& chaine)
+        {
+            cerr << chaine << endl << endl;
+        }
+    }
+    while(test);
+    return res == 'y' || res == 'Y';
+}
+

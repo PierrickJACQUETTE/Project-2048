@@ -10,11 +10,12 @@ Jeu_Taquin::Jeu_Taquin(int x, int y ) : Jeu(x,y)
         resultat[i]=i+1;
     }
     melanger(resultat,taille);
+    Plateau p = getPlateau();
     for(int i=0; i< y; i++)
     {
         for(int j=0; j<x; j++)
         {
-            Plateau p = getPlateau();
+
             Case c = p.getCase(j,i);
             if(resultat[i*p.getNbX()+j]!=taille)
             {
@@ -24,6 +25,7 @@ Jeu_Taquin::Jeu_Taquin(int x, int y ) : Jeu(x,y)
             setPlateau(p);
         }
     }
+    set_case_vide(p, x, y);
 
 }
 
@@ -70,114 +72,102 @@ void Jeu_Taquin::melanger(int* tableau, int taille)
     }
 }
 
+void Jeu_Taquin::setVide(int i, int j)
+{
+    vide.setX(i);
+    vide.setY(j);
+}
+
+void Jeu_Taquin::set_case_vide(Plateau p, int x, int y)
+{
+    for(int i=0; i< y; i++)
+    {
+        for(int j=0; j<x; j++)
+        {
+            Case c = p.getCase(j,i);
+            if(c.getTypeCase() == TypeCase::Vide)
+            {
+                setVide(i, j);
+            }
+        }
+    }
+}
+
 void Jeu_Taquin::unTour(int directionChoisie)
 {
     moveCase(directionChoisie);
 }
 
+void Jeu_Taquin::modifier_case(Plateau p, int i, int j)
+{
+    Case c = p.getCase(j, i);
+    Case act = p.getCase(vide.getY(), vide.getX());
+    int tmp = c.getNombre();
+    c.setNombre(act.getNombre());
+    act.setNombre(tmp);
+    p.setCase(act, vide.getY(), vide.getX());
+    p.setCase(c, j, i);
+    setVide(i, j);
+    setPlateau(p);
+}
+
 bool Jeu_Taquin::moveCase(int directionChoisie)
 {
     cout << "position choisie : " << (char)directionChoisie << endl;
+    int i = vide.getX();
+    int j = vide.getY();
+    cout<<"i = "<<i<<" j = "<<j<<endl;
+    Plateau p = getPlateau();
     switch(directionChoisie)
     {
-    case 'q':
-    {
-        for(int i = 0; i < getPlateau().getNbY(); i++)
+        case 'q':
         {
-            for(int j = 0; j < getPlateau().getNbX(); j++)
+            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
             {
-                if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+                if(j-1 >= 0)
                 {
-                    if(j-1 >= 0)
-                    {
-                        Plateau p = getPlateau();
-                        Case c= p.getCase(j-1, i);
-                        p.setCase(c,j,i);
-                        c = p.getCase(j-1, i);
-                        c.setNombre(0);
-                        p.setCase(c, j-1, i);
-                        setPlateau(p);
-                        return true;
-                    }
+                    modifier_case(p, i, j-1);
+                    return true;
                 }
             }
+            break;
         }
-        break;
-    }
-    case 'z':
-    {
-        for(int i = 0; i < getPlateau().getNbY(); i++)
+        case 'z':
         {
-            for(int j = 0; j < getPlateau().getNbX(); j++)
+            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
             {
-                if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+                if(i-1 >= 0)
                 {
-                    if(i-1 >= 0)
-                    {
-                        Plateau p = getPlateau();
-                        Case c= p.getCase(j, i-1);
-                        p.setCase(c,j,i);
-                        c = p.getCase(j, i-1);
-                        c.setNombre(0);
-                        p.setCase(c, j, i-1);
-                        setPlateau(p);
-                        return true;
-                    }
+                    modifier_case(p, i-1, j);
+                    return true;
                 }
             }
+            break;
         }
-        break;
-    }
-    case 's':
-    {
-        for(int i = 0; i < getPlateau().getNbY(); i++)
+        case 's':
         {
-            for(int j = 0; j < getPlateau().getNbX(); j++)
+            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
             {
-                if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+                if(i+1 < getPlateau().getNbY())
                 {
-                    if(i+1 < getPlateau().getNbY())
-                    {
-                        Plateau p = getPlateau();
-                        Case c= p.getCase(j, i+1);
-                        p.setCase(c,j,i);
-                        c = p.getCase(j, i+1);
-                        c.setNombre(0);
-                        p.setCase(c, j, i+1);
-                        setPlateau(p);
-                        return true;
-                    }
-                }
-
-            }
-        }
-
-        break;
-    }
-    case 'd':
-    {
-        for(int i = 0; i < getPlateau().getNbY(); i++)
-        {
-            for(int j = 0; j < getPlateau().getNbX(); j++)
-            {
-                if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
-                {
-                    if(j+1 < getPlateau().getNbX())
-                    {
-                        Plateau p = getPlateau();
-                        Case c= p.getCase(j+1, i);
-                        p.setCase(c,j,i);
-                        c = p.getCase(j+1, i);
-                        c.setNombre(0);
-                        p.setCase(c, j+1, i);
-                        setPlateau(p);
-                        return true;
-                    }
+                    modifier_case(p, i+1, j);
+                    return true;
                 }
             }
+            break;
         }
-        break;
-    }
+        case 'd':
+        {
+            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+            {
+                if(j+1 < getPlateau().getNbX())
+                {
+                    modifier_case(p, i, j+1);
+                    return true;
+                }
+            }
+            break;
+        }
     }
     return false;
 }

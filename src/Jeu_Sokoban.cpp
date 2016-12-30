@@ -1,11 +1,12 @@
 #include "Jeu_Sokoban.hpp"
 using namespace std;
 
-Jeu_Sokoban::Jeu_Sokoban(int x, int y) : Jeu(x,y)
+Jeu_Sokoban::Jeu_Sokoban(int x, int y, bool boolean) : Jeu(x,y)
 {
     int taille = getPlateau().getTaille();
     TypeCase resultat[taille];
     initialise_plateau(resultat, taille);
+    mur = boolean;
     for(int i=0; i< y; i++)
     {
         for(int j=0; j<x; j++)
@@ -42,7 +43,10 @@ void Jeu_Sokoban::initialise_plateau(TypeCase* resultat, int taille)
         if(x < 2){
             resultat[i] = TypeCase::Vide;
         }else{
-            resultat[i] = TypeCase::Mur;
+            if(mur)
+                resultat[i] = TypeCase::Mur;
+            else
+                resultat[i] = TypeCase::Vide;
         }
     }
     int i = 0;
@@ -184,29 +188,10 @@ void Jeu_Sokoban::unTour(int directionChoisie)
             {
                 if(case_libre(p, i, j+1))
                     modifier_case(p, i, j+1);
-                    /*Case c= p.getCase(j+1, i);
-                    p.setCase(c,j,i);
-                    c.setTypeCase(TypeCase::Personnage);
-                    setPers(p, i, j+1);
-                    p.setCase(c, j+1, i);
-                    setPlateau(p);*/
                 else if(p.getCase(j+1, i).getTypeCase() == TypeCase::Box || p.getCase(j-1, i).getTypeCase() == TypeCase::Final)
                 {
-
                     if(case_libre(p, i, j+2) && j+2 < getPlateau().getNbX())
-                    {
-                        cout<<"Ok"<<endl;
-                        /*
-                        Case c= p.getCase(j+1, i);
-                        p.setCase(c,j,i);
-                        c.setTypeCase(TypeCase::Personnage);
-                        setPers(p, i, j+1);
-                        p.setCase(c, j+1, i);
-                        setPlateau(p);
-                        */
                         modifier_box(p, i, j+2, i, j+1);
-                        //modifier_case(p, i, j+1);
-                    }
                 }
             }
             break;

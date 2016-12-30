@@ -91,7 +91,7 @@ int Jeu::choixDirection()
     bool test = true;
     do
     {
-        cout << "z: haut, q: gauche, s: bas et d: droite" <<endl;
+        cout << "z: haut, q: gauche, s: bas et d: droite p pour quitter" <<endl;
         cout << "Veuillez choisir une direction "<< endl;
         cin >> res;
         try
