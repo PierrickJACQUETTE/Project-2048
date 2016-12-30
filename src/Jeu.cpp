@@ -27,14 +27,6 @@ bool Jeu::lancerException(bool b, string s)
 }
 
 void Jeu::affiche() {}
-/*
-int Jeu::rand_a_b(int valeurMax, int valeurMin)
-{
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_int_distribution<> dis(valeurMin, valeurMax-1);
-    return dis(gen);
-}*/
 
 int Jeu::rand_a_b(int valeurMax, int valeurMin)
 {
@@ -96,7 +88,7 @@ int Jeu::choixDirection()
         cin >> res;
         try
         {
-            test = !Jeu::lancerException((res!='z' && res!='q' && res!='s' && res!='d') , "Direction inconnue : z, q, s ou d");
+            test = !Jeu::lancerException((res!='z' && res!='q' && res!='s' && res!='d' && res!='p') , "Direction inconnue : z, q, s ou d ou p pour quitter");
         }
         catch(string const& chaine)
         {
@@ -104,6 +96,7 @@ int Jeu::choixDirection()
         }
     }
     while(test);
-
+    if(res == 'p')
+        exit(0);
     return res;
 }
