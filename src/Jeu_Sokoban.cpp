@@ -5,8 +5,9 @@ Jeu_Sokoban::Jeu_Sokoban(int x, int y, bool boolean) : Jeu(x,y)
 {
     int taille = getPlateau().getTaille();
     TypeCase resultat[taille];
-    initialise_plateau(resultat, taille);
     mur = boolean;
+    initialise_plateau(resultat, taille);
+
     for(int i=0; i< y; i++)
     {
         for(int j=0; j<x; j++)
@@ -23,6 +24,7 @@ Jeu_Sokoban::Jeu_Sokoban(int x, int y, bool boolean) : Jeu(x,y)
             setPlateau(p);
         }
     }
+    affiche_legende();
 }
 
 Jeu_Sokoban::~Jeu_Sokoban() {}
@@ -131,8 +133,21 @@ void Jeu_Sokoban::modifier_box(Plateau p, int i, int j, int iprec, int jprec)
     setPlateau(p);
     modifier_case(p, iprec, jprec);
 }
+
+void Jeu_Sokoban::affiche_legende()
+{
+    cout<<" "<<endl;
+    cout<<". est une case vide"<<endl;
+    cout<<"G est une case de but la ou on doit ammener une case"<<endl;
+    cout<<"P est le personnage "<<endl;
+    cout<<"O est est une boite à pousser"<<endl;
+    cout<<"X est une case but avec une boite dessus"<<endl;
+    cout<<"M est un Mur"<<endl;
+    cout<<"B est une case but avec le personnage dessus"<<endl;
+}
 void Jeu_Sokoban::unTour(int directionChoisie)
 {
+    affiche_legende();
     cout << "position choisie : " << (char)directionChoisie << endl;
     int i = pers.getX();
     int j = pers.getY();
@@ -148,8 +163,12 @@ void Jeu_Sokoban::unTour(int directionChoisie)
                     modifier_case(p, i, j-1);
                 else if(p.getCase(j-1, i).getTypeCase() == TypeCase::Box || p.getCase(j-1, i).getTypeCase() == TypeCase::Final)
                 {
-                    if(case_libre(p, i, j-2) && j-2 >= 0)
-                        modifier_box(p, i, j-2, i, j-1);
+                    if(j-2 >= 0)
+                    {
+                        if(case_libre(p, i, j-2))
+                            modifier_box(p, i, j-2, i, j-1);
+                    }
+
                 }
             }
             break;
@@ -160,10 +179,14 @@ void Jeu_Sokoban::unTour(int directionChoisie)
             {
                 if(case_libre(p, i-1, j))
                     modifier_case(p, i -1, j);
-                else if(p.getCase(j, i-1).getTypeCase() == TypeCase::Box || p.getCase(j-1, i).getTypeCase() == TypeCase::Final)
+                else if(p.getCase(j, i-1).getTypeCase() == TypeCase::Box || p.getCase(j, i-1).getTypeCase() == TypeCase::Final)
                 {
-                    if(case_libre(p, i-2, j) && i-2 >= 0)
-                        modifier_box(p, i-2, j, i-1, j);
+                    if(i-2 >= 0)
+                    {
+                        if(case_libre(p, i-2, j))
+                            modifier_box(p, i-2, j, i-1, j);
+                    }
+
                 }
             }
             break;
@@ -174,10 +197,14 @@ void Jeu_Sokoban::unTour(int directionChoisie)
             {
                 if(case_libre(p, i+1, j))
                     modifier_case(p, i+1, j);
-                else if(p.getCase(j, i+1).getTypeCase() == TypeCase::Box || p.getCase(j-1, i).getTypeCase() == TypeCase::Final)
+                else if(p.getCase(j, i+1).getTypeCase() == TypeCase::Box || p.getCase(j, i+1).getTypeCase() == TypeCase::Final)
                 {
-                    if(case_libre(p, i+2, j) && i+2 < getPlateau().getNbY())
-                        modifier_box(p, i+2, j, i+1, j);
+                    if(i+2 < getPlateau().getNbY())
+                    {
+                        if(case_libre(p, i+2, j))
+                            modifier_box(p, i+2, j, i+1, j);
+                    }
+
                 }
             }
             break;
@@ -188,10 +215,14 @@ void Jeu_Sokoban::unTour(int directionChoisie)
             {
                 if(case_libre(p, i, j+1))
                     modifier_case(p, i, j+1);
-                else if(p.getCase(j+1, i).getTypeCase() == TypeCase::Box || p.getCase(j-1, i).getTypeCase() == TypeCase::Final)
+                else if(p.getCase(j+1, i).getTypeCase() == TypeCase::Box || p.getCase(j+1, i).getTypeCase() == TypeCase::Final)
                 {
-                    if(case_libre(p, i, j+2) && j+2 < getPlateau().getNbX())
-                        modifier_box(p, i, j+2, i, j+1);
+                    if(j+2 < getPlateau().getNbX())
+                    {
+                        if(case_libre(p, i, j+2))
+                            modifier_box(p, i, j+2, i, j+1);
+                    }
+
                 }
             }
             break;

@@ -173,9 +173,7 @@ bool Utilisateur::bool_mur()
     char res;
     do
     {
-        cout << "Voulez vous des murs ? Y pour oui N pour non"<< endl;;
-               cout << "z: haut, q: gauche, s: bas et d: droite" <<endl;
-        cout << "Veuillez choisir une direction "<< endl;
+        cout << "Voulez vous des murs ? Y pour oui N pour non"<< endl;
         cin >> res;
         try
         {

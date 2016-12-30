@@ -15,6 +15,7 @@ class Jeu_Sokoban : public Jeu
       void modifier_case(Plateau p, int i, int j);//Méthode pour faire le mouvement du joueur
       void modifier_box(Plateau p, int i, int j, int iprec, int jprec);//Méthode pour faire le mouvement de la caisse
       bool bool_mur(); //Pour savoir si on veut des murs
+      void affiche_legende();//Afficher la legende
 
   public :
     Jeu_Sokoban(int x, int y, bool boolean);
