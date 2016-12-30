@@ -187,4 +187,3 @@ bool Utilisateur::bool_mur()
     while(test);
     return res == 'y' || res == 'Y';
 }
-
