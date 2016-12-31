@@ -5,6 +5,8 @@ using namespace std;
 Jeu_2048::Jeu_2048(int x, int y, int puissance) : Jeu(x,y), score(0), puissance(puissance)
 {
     int nombre = x*y*15/100;
+    if(nombre < 1)
+        nombre = 1;
     for(int i=0; i<nombre; i++)
     {
         Plateau p = getPlateau();
