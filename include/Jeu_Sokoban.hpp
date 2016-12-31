@@ -2,7 +2,13 @@
 #define JEU_SOKOBAN_HPP
 #include "Jeu.hpp"
 
-// Il faudra faire des niveaux predefini en dur dans le code ou dans un fichier separé a voir selon le temps
+/**
+\file Jeu_Sokoban.hpp
+ * \brief Classe pour le jeu sokoban
+ * \author Bessa Alexandre & Jacquette Pierrick
+ *
+ *  Ceci permet l'éxécution du jeu suivant des régles tant que le jeu n'est pas gagné ou qu'il n'y a plus de coup possible
+ */
 class Jeu_Sokoban : public Jeu
 {
 
@@ -18,11 +24,48 @@ class Jeu_Sokoban : public Jeu
       void affiche_legende();//Afficher la legende
 
   public :
+    /** \brief Constructeur du jeu Sokoban
+     * \fn Jeu_Sokoban(int x, int y, bool boolean)
+     *
+     * \param x int la taille en x
+     * \param y int la taille en y
+     * \param boolean bool : savoir si l'on met des murs
+     *
+     */
     Jeu_Sokoban(int x, int y, bool boolean);
+
+    /** \brief Destructeur du jeu Sokoban
+     * \fn virtual ~Jeu_Sokoban()
+     *
+     * \return virtual
+     *
+     */
     virtual ~Jeu_Sokoban();
-    bool fini();// renvoie vrai si le jeu est términé et donc gagné
-    void unTour(int); //realise un tour
-    bool aGagne();// test si le joueur a gagné
+
+    /** \brief Fonction permettant de savoir si le jeu est fini
+     * \fn bool fini()
+     *
+     * \return bool true si fini, false sinon
+     *
+     */
+    bool fini();
+
+    /** \brief Fonction permettant de faire un Tour dans le jeu
+     * \fn void unTour(int)
+     *
+     * \param int direction de déplacement
+     * \return void
+     *
+     */
+    void unTour(int);
+
+    /** \brief Fonction permettant de savoir si on a gagné
+     * \fn bool aGagne()
+     *
+     * \return bool on a gagné ? true si oui, false sinon
+     *
+     */
+    bool aGagne();
 
   protected :
 

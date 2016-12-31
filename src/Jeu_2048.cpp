@@ -4,7 +4,7 @@ using namespace std;
 
 Jeu_2048::Jeu_2048(int x, int y, int puissance) : Jeu(x,y), score(0), puissance(puissance)
 {
-    int nombre = getPlateau().getTaille()*15/100;
+    int nombre = x*y*15/100;
     for(int i=0; i<nombre; i++)
     {
         Plateau p = getPlateau();

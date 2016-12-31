@@ -29,6 +29,9 @@ void Utilisateur::start()
         jeux = new Jeu_Sokoban(x,y, b);
         break;
     }
+        default:
+        jeux = NULL;
+        break;
     }
     //0 : humain et 1 : robot
     switch(joueur)
@@ -45,8 +48,6 @@ void Utilisateur::start()
     }
 
     }
-    delete jeux;
-
 }
 
 Jeu* Utilisateur::fonction2048(int lequel, int x, int y)
@@ -75,9 +76,11 @@ Jeu* Utilisateur::fonction2048(int lequel, int x, int y)
         jeux = new Jeu_2048_neg(x,y);
         break;
     }
+    default:
+        jeux = NULL;
+        break;
     }
     return jeux;
-
 }
 
 int Utilisateur::choixTaille(string s)

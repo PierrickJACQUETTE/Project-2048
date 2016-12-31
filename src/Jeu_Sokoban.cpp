@@ -3,7 +3,7 @@ using namespace std;
 
 Jeu_Sokoban::Jeu_Sokoban(int x, int y, bool boolean) : Jeu(x,y)
 {
-    int taille = getPlateau().getTaille();
+    int taille = x*y;
     TypeCase resultat[taille];
     mur = boolean;
     initialise_plateau(resultat, taille);

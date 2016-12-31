@@ -1,0 +1,10 @@
+Projet dans le cadre du cours de C++ M1 Paris Diderot
+
+Participants :
+BESSA Alexandre
+JACQUETTE Pierrick
+
+Pour éxécuter le programme : 
+ouvrir un terminal à la racine du projet
+taper make
+l'éxécutable se trouve dans bin/Debug et bin/Release en fonction du mode voulu

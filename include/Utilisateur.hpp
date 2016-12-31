@@ -9,12 +9,23 @@
 #include "Jeu_Taquin.hpp"
 #include "Case.hpp"
 
+/**
+\file Utilisateur.hpp
+ * \brief Classe pour representer l'intéraction avec l'utilisateur
+ * \author Bessa Alexandre & Jacquette Pierrick
+ *
+ *  Permet de demander à l'utilisateur de rentrer tous les paramétres
+ */
 class Utilisateur
 {
 public:
+    /** \brief Fonction qui choisie le jeu auquel on veux jouer et initialise l'objet correspondant
+     *
+     * \return void
+     *
+     */
     static void start();
 
-protected:
 private:
 
     static int choixTaille(std::string);

@@ -1,7 +1,7 @@
 #ifndef JEU_2048_NEG_HPP
 #define JEU_2048_NEG_HPP
 
-#include <Jeu_2048.hpp>
+#include "Jeu_2048.hpp"
 
 /** \file Jeu_2048_neg.hpp
  * \brief Classe pour le jeu 2048 option negatif

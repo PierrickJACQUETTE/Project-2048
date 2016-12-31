@@ -1,7 +1,7 @@
 #ifndef JEU_2048_DOUBLE_HPP
 #define JEU_2048_DOUBLE_HPP
 
-#include <Jeu_2048.hpp>
+#include "Jeu_2048.hpp"
 /** \file Jeu_2048_double.hpp
  * \brief Classe pour le jeu 2048 option double
  * \author Bessa Alexandre & Jacquette Pierrick

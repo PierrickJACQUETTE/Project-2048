@@ -26,8 +26,6 @@ bool Jeu::lancerException(bool b, string s)
     return true;
 }
 
-void Jeu::affiche() {}
-
 int Jeu::rand_a_b(int valeurMax, int valeurMin)
 {
     int x;

@@ -3,7 +3,7 @@ using namespace std;
 
 Jeu_Taquin::Jeu_Taquin(int x, int y ) : Jeu(x,y)
 {
-    int taille = getPlateau().getTaille();
+    int taille = x*y;
     int resultat[taille];
     for(int i = 0; i< taille; i++)
     {
@@ -52,12 +52,6 @@ bool Jeu_Taquin::aGagne()
     }
     return (getPlateau().getCase(getPlateau().getNbX()-1, getPlateau().getNbY()-1).getTypeCase() == TypeCase::Vide)? true : false;
 }
-
-bool Jeu_Taquin::jeu_Possible()
-{
-    return true;   // test si le jeu est possible
-}
-
 
 void Jeu_Taquin::melanger(int* tableau, int taille)
 {
