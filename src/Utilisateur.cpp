@@ -29,7 +29,7 @@ void Utilisateur::start()
         jeux = new Jeu_Sokoban(x,y, b);
         break;
     }
-        default:
+    default:
         jeux = NULL;
         break;
     }

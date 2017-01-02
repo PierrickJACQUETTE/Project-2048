@@ -12,18 +12,18 @@
 class Jeu_Sokoban : public Jeu
 {
 
-  private :
-      Case pers;
-      bool mur;
-      void initialise_plateau(TypeCase* , int);// Permet de remplir le plateau avec des cases vides des murs les box les "buts" et le personnage
-      bool case_libre(Plateau p, int i, int j); //renvoie vrai si la case est libre ou un "but"
-      void setPers(Plateau p, int i, int j); //Met a jour les paramètres de la Case pers
-      void modifier_case(Plateau p, int i, int j);//Méthode pour faire le mouvement du joueur
-      void modifier_box(Plateau p, int i, int j, int iprec, int jprec);//Méthode pour faire le mouvement de la caisse
-      bool bool_mur(); //Pour savoir si on veut des murs
-      void affiche_legende();//Afficher la legende
+private :
+    Case pers;
+    bool mur;
+    void initialise_plateau(TypeCase* , int);// Permet de remplir le plateau avec des cases vides des murs les box les "buts" et le personnage
+    bool case_libre(Plateau p, int i, int j); //renvoie vrai si la case est libre ou un "but"
+    void setPers(Plateau p, int i, int j); //Met a jour les paramètres de la Case pers
+    void modifier_case(Plateau p, int i, int j);//Méthode pour faire le mouvement du joueur
+    void modifier_box(Plateau p, int i, int j, int iprec, int jprec);//Méthode pour faire le mouvement de la caisse
+    bool bool_mur(); //Pour savoir si on veut des murs
+    void affiche_legende();//Afficher la legende
 
-  public :
+public :
     /** \brief Constructeur du jeu Sokoban
      * \fn Jeu_Sokoban(int x, int y, bool boolean)
      *
@@ -67,7 +67,7 @@ class Jeu_Sokoban : public Jeu
      */
     bool aGagne();
 
-  protected :
+protected :
 
 };
 

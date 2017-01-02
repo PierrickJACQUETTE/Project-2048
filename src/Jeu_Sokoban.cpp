@@ -42,9 +42,12 @@ void Jeu_Sokoban::initialise_plateau(TypeCase* resultat, int taille)
     for(int i = 0; i < taille; i++)
     {
         x = rand_a_b(3,0);
-        if(x < 2){
+        if(x < 2)
+        {
             resultat[i] = TypeCase::Vide;
-        }else{
+        }
+        else
+        {
             if(mur)
                 resultat[i] = TypeCase::Mur;
             else
@@ -52,9 +55,11 @@ void Jeu_Sokoban::initialise_plateau(TypeCase* resultat, int taille)
         }
     }
     int i = 0;
-    while(i != but){
+    while(i != but)
+    {
         x = rand_a_b(taille, 0);
-        if(resultat[x] == TypeCase::Vide){
+        if(resultat[x] == TypeCase::Vide)
+        {
             resultat[x] = TypeCase::But;
             i++;
         }
@@ -62,19 +67,25 @@ void Jeu_Sokoban::initialise_plateau(TypeCase* resultat, int taille)
 
     i = 0;
     int test = 0;
-    while(i != but && test <20){
+    while(i != but && test <20)
+    {
         x = rand_a_b(taille, 0);
-        if(resultat[x] == TypeCase::Vide){
+        if(resultat[x] == TypeCase::Vide)
+        {
             resultat[x] = TypeCase::Box;
             i++;
-        }else{
+        }
+        else
+        {
             test++;
         }
     }
 
-    while(!pers){
+    while(!pers)
+    {
         x = rand_a_b(taille, 0);
-        if(resultat[x] == TypeCase::Vide){
+        if(resultat[x] == TypeCase::Vide)
+        {
             resultat[x] = TypeCase::Personnage;
             pers = true;
         }
@@ -90,7 +101,7 @@ bool Jeu_Sokoban::fini()
 bool Jeu_Sokoban::case_libre(Plateau p, int i, int j)
 {
     return p.getCase(j, i).getTypeCase() == TypeCase::Vide
-        || p.getCase(j, i).getTypeCase() == TypeCase::But;
+           || p.getCase(j, i).getTypeCase() == TypeCase::But;
 }
 
 void Jeu_Sokoban::setPers(Plateau p, int i, int j)
@@ -140,7 +151,7 @@ void Jeu_Sokoban::affiche_legende()
     cout<<". est une case vide"<<endl;
     cout<<"G est une case de but la ou on doit ammener une case"<<endl;
     cout<<"P est le personnage "<<endl;
-    cout<<"O est est une boite à pousser"<<endl;
+    cout<<"O est une boite à pousser"<<endl;
     cout<<"X est une case but avec une boite dessus"<<endl;
     cout<<"M est un Mur"<<endl;
     cout<<"B est une case but avec le personnage dessus"<<endl;
@@ -155,78 +166,78 @@ void Jeu_Sokoban::unTour(int directionChoisie)
 
     switch(directionChoisie)
     {
-        case 'q':
+    case 'q':
+    {
+        if(j-1 >= 0)
         {
-            if(j-1 >= 0)
+            if(case_libre(p, i, j-1))
+                modifier_case(p, i, j-1);
+            else if(p.getCase(j-1, i).getTypeCase() == TypeCase::Box || p.getCase(j-1, i).getTypeCase() == TypeCase::Final)
             {
-                if(case_libre(p, i, j-1))
-                    modifier_case(p, i, j-1);
-                else if(p.getCase(j-1, i).getTypeCase() == TypeCase::Box || p.getCase(j-1, i).getTypeCase() == TypeCase::Final)
+                if(j-2 >= 0)
                 {
-                    if(j-2 >= 0)
-                    {
-                        if(case_libre(p, i, j-2))
-                            modifier_box(p, i, j-2, i, j-1);
-                    }
-
+                    if(case_libre(p, i, j-2))
+                        modifier_box(p, i, j-2, i, j-1);
                 }
+
             }
-            break;
         }
-        case 'z':
+        break;
+    }
+    case 'z':
+    {
+        if(i-1>=0)
         {
-            if(i-1>=0)
+            if(case_libre(p, i-1, j))
+                modifier_case(p, i -1, j);
+            else if(p.getCase(j, i-1).getTypeCase() == TypeCase::Box || p.getCase(j, i-1).getTypeCase() == TypeCase::Final)
             {
-                if(case_libre(p, i-1, j))
-                    modifier_case(p, i -1, j);
-                else if(p.getCase(j, i-1).getTypeCase() == TypeCase::Box || p.getCase(j, i-1).getTypeCase() == TypeCase::Final)
+                if(i-2 >= 0)
                 {
-                    if(i-2 >= 0)
-                    {
-                        if(case_libre(p, i-2, j))
-                            modifier_box(p, i-2, j, i-1, j);
-                    }
-
+                    if(case_libre(p, i-2, j))
+                        modifier_box(p, i-2, j, i-1, j);
                 }
+
             }
-            break;
         }
-        case 's':
+        break;
+    }
+    case 's':
+    {
+        if(i+1 < getPlateau().getNbY())
         {
-            if(i+1 < getPlateau().getNbY())
+            if(case_libre(p, i+1, j))
+                modifier_case(p, i+1, j);
+            else if(p.getCase(j, i+1).getTypeCase() == TypeCase::Box || p.getCase(j, i+1).getTypeCase() == TypeCase::Final)
             {
-                if(case_libre(p, i+1, j))
-                    modifier_case(p, i+1, j);
-                else if(p.getCase(j, i+1).getTypeCase() == TypeCase::Box || p.getCase(j, i+1).getTypeCase() == TypeCase::Final)
+                if(i+2 < getPlateau().getNbY())
                 {
-                    if(i+2 < getPlateau().getNbY())
-                    {
-                        if(case_libre(p, i+2, j))
-                            modifier_box(p, i+2, j, i+1, j);
-                    }
-
+                    if(case_libre(p, i+2, j))
+                        modifier_box(p, i+2, j, i+1, j);
                 }
+
             }
-            break;
         }
-        case 'd':
+        break;
+    }
+    case 'd':
+    {
+        if(j+1 < getPlateau().getNbX())
         {
-            if(j+1 < getPlateau().getNbX())
+            if(case_libre(p, i, j+1))
+                modifier_case(p, i, j+1);
+            else if(p.getCase(j+1, i).getTypeCase() == TypeCase::Box || p.getCase(j+1, i).getTypeCase() == TypeCase::Final)
             {
-                if(case_libre(p, i, j+1))
-                    modifier_case(p, i, j+1);
-                else if(p.getCase(j+1, i).getTypeCase() == TypeCase::Box || p.getCase(j+1, i).getTypeCase() == TypeCase::Final)
+                if(j+2 < getPlateau().getNbX())
                 {
-                    if(j+2 < getPlateau().getNbX())
-                    {
-                        if(case_libre(p, i, j+2))
-                            modifier_box(p, i, j+2, i, j+1);
-                    }
-
+                    if(case_libre(p, i, j+2))
+                        modifier_box(p, i, j+2, i, j+1);
                 }
+
             }
-            break;
         }
+        break;
+    }
     }
 }
 

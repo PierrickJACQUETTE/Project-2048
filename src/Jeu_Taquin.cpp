@@ -114,54 +114,54 @@ bool Jeu_Taquin::moveCase(int directionChoisie)
     Plateau p = getPlateau();
     switch(directionChoisie)
     {
-        case 'q':
+    case 'q':
+    {
+        if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
         {
-            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+            if(j-1 >= 0)
             {
-                if(j-1 >= 0)
-                {
-                    modifier_case(p, i, j-1);
-                    return true;
-                }
+                modifier_case(p, i, j-1);
+                return true;
             }
-            break;
         }
-        case 'z':
+        break;
+    }
+    case 'z':
+    {
+        if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
         {
-            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+            if(i-1 >= 0)
             {
-                if(i-1 >= 0)
-                {
-                    modifier_case(p, i-1, j);
-                    return true;
-                }
+                modifier_case(p, i-1, j);
+                return true;
             }
-            break;
         }
-        case 's':
+        break;
+    }
+    case 's':
+    {
+        if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
         {
-            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+            if(i+1 < getPlateau().getNbY())
             {
-                if(i+1 < getPlateau().getNbY())
-                {
-                    modifier_case(p, i+1, j);
-                    return true;
-                }
+                modifier_case(p, i+1, j);
+                return true;
             }
-            break;
         }
-        case 'd':
+        break;
+    }
+    case 'd':
+    {
+        if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
         {
-            if(getPlateau().getCase(j,i).getTypeCase() == TypeCase::Vide)
+            if(j+1 < getPlateau().getNbX())
             {
-                if(j+1 < getPlateau().getNbX())
-                {
-                    modifier_case(p, i, j+1);
-                    return true;
-                }
+                modifier_case(p, i, j+1);
+                return true;
             }
-            break;
         }
+        break;
+    }
     }
     return false;
 }
